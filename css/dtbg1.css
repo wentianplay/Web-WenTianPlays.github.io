@@ -1,0 +1,86 @@
+
+@charset "utf-8";/* CSS Document */
+/**{-webkit-user-select:none;user-select:none;}*/
+html,body,div,ul,li
+{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent;font-family: inherit;}
+
+/*居中div*/
+.hotImgs {
+position:absolute;
+left:50%;
+margin-left: -730px;/*导航图div宽度一半 实现居中*/
+}
+
+/*导航图div*/
+.hotImgs .boxInner{position:absolute;overflow:hidden;width:1460px;height:800px;}
+/*上层 图层*/
+.hotImgs .imgs{position:absolute;top:0;left:0;width:1460px;height:480px;overflow: hidden;z-index:1;}
+/*上层 变换格子*/
+.hotImgs .imgs li{height:480px;width:200px;position:absolute;overflow: hidden;top:0;left:0;}
+.hotImgs .imgs li a{width:100%;height:100%;display: block;}
+.hotImgs .imgs li img{height:100%;width:1460px; display: block;position: absolute;top: 0;}
+
+/*变换进度线*/
+.hotImgs .line{width:1460px;height:6px;position:absolute;top:480px;left:0;background-color:#5e4934;}
+.hotImgs .line .scNow{height:100%;background-color:#e24e09;position:absolute;top:0;left:0;display:block;}
+
+/*文字条目div*/
+.hotImgs .digest{height:45px;width:1460px;position:absolute;top:435px;left:0;background-color:rgba(0,0,0,0.5);overflow:hidden;z-index:2;}
+
+/*下栏图 左右箭头*/
+.hotImgs .ll,.hotImgs .rr{width:28px;height:300px;position:absolute;bottom:0;cursor:pointer;}
+.hotImgs .ll{left:0;background:url(http://cimg.178.com/wow/s/20160816/p08.png) no-repeat 0 0;}
+.hotImgs .rr{right:0;background:url(http://cimg.178.com/wow/s/20160816/p07.png) no-repeat 0 0;}
+
+/*下栏图 div*/
+.hotImgs .nv{position:absolute;height:200px;width:1460px;bottom:0;top:480px;left:0;}
+/*下栏图 div*/
+.hotImgs .nvs{position:absolute;bottom:0;left:0;height:200px;width:12600px;overflow:hidden;}
+
+/*下栏图 小格子 宽度*/
+.hotImgs .nvs li{width:365px;height:200px;float:left;text-align:center;cursor:pointer;position:relative;}
+
+.hotImgs .nvs li .mask{-moz-transition:opacity 500ms ease-out;-webkit-transition:opacity 500ms ease-out;position:absolute;top:0;left:0;background-color:#000;opacity:0.7;filter:alpha(opacity=60);width:365px;height:200px;}
+
+/*下栏图片*/
+.hotImgs .nvs li img{width:365px;height:200px;}
+
+/*下栏阴影*/
+.hotImgs .nvs li:hover .mask{display:block;opacity:0.5;filter:alpha(opacity=50);width:365px;height:100%;border:1px solid #5f4b36;}
+.hotImgs .nvs li.on .mask{display:block;opacity:0;filter:alpha(opacity=0);width:365px;height:100%;border:1px solid #B4B2B2;}
+
+
+.hotImgs .digest {filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#7F000000', endColorstr='#7F000000');}
+:root .hotImgs .digest {filter:none;background-color:rgba(0,0,0,0.5);}
+.hotImgs .digest .nums{position:absolute;font-family:Georgia;font-size:24px;color:#bbbbbb;left:25px;top:7px;}
+.hotImgs .digest .nums em{font-style:italic;}
+.hotImgs .digest .nums .size{}
+.hotImgs .digest .nums .now{color:#e00f19;}
+.hotImgs .digest .txt{position:absolute;font-size:18px;font-family:Microsoft YaHei;color:#dddddd;line-height:26px;width:450pxpx;top:11px;left:95px;}
+
+ 
+ 
+.tooltipBox{background-color: #2e622c;background-color: rgba(52,110,49,0.85);border-radius: 5px;color: #fff;font-weight: bold;font-size: 14px;padding:10px;}
+
+/*.jump{-webkit-animation: jump 0.6s cubic-bezier(0, 0, 0.29, 1.19) infinite alternate;}*/
+@-webkit-keyframes jump
+{
+    100% {transform:scale(1.1,0.95) translateY(-10px);}
+}
+@-webkit-keyframes rotateB
+{
+    100% {transform: rotateY(-360deg);}
+
+}
+@keyframes rotate
+{
+    100% {transform:rotate(720deg) scale(2)}
+}
+@-webkit-keyframes rotate
+{
+    100% {-webkit-transform:rotate(720deg) scale(2)}
+}
+@-moz-keyframes rotate
+{
+    100% {-moz-transform:rotate(720deg) scale(2)}
+}
